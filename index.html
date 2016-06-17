@@ -33,7 +33,7 @@
       render: function() {
         return (
           <div className="commentList">
-            <Comment author="Pete Hunt" year="2015">This is <b>one</b> comment</Comment>
+            <Comment author="Pete Hunt" year="2015">This is one comment</Comment>
             <Comment author="Jordan Walke" year="2013">This is *another* comment</Comment>
           </div>
         );
@@ -58,7 +58,7 @@
             <h2 className="commentAuthor">
               {this.props.author} ({this.props.year})
             </h2>
-            {this.props.children}
+            {(new Remarkable()).render(this.props.children.toString())}
           </div>
         );
       }
