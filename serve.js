@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var _ = require('lodash');
 
 var hostname = 'localhost';
 var port = 3000;
@@ -31,7 +32,10 @@ api.get('/comments', function(req, res, next) {
 });
 api.post('/comments', function(req, res, next) {
   console.log(req.body);
-  data.push(req.body);
+  var comment = req.body;
+  comment = comment || {};
+  comment.id = _.maxBy(data, 'id').id + 1;
+  data.push(comment);
   res.json(data);
 });
 api.get('/comments/:id', function(req, res, next) {
