@@ -9,4 +9,5 @@ This is the code for tutorial found in
 4. render markdown
 5. render markup
 6. inject data into tags
-7. rest call
+7. rest call to retrieve data
+8. poll server for data
