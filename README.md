@@ -5,4 +5,7 @@ This is the code for tutorial found in
 ## Steps
 1. render an element
 2. create child elements
-3. 
+3. access immutable tag property of children
+4. render markdown
+5. render markup
+6. inject data into tags
